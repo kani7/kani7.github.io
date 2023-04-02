@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>「USBコントローラ→ATARI変換機」変換モード追加アタッチメント</title>
+</head>
+<body>
+<h1>「USBコントローラ→ATARI変換機」変換モード追加アタッチメント</h1>
+<p><img width="50%" height="auto" alt="接続例" src="./images/usb_ctrl_cnv_addon.png"</p>
+
+<p>HUYE氏が中心になって開発している
+<a href="http://park7.wakwak.com/~huye/usb_ctrl_cnv.html">USBコントローラ→ATARI変換機</a> のver.4.20以降で追加された変換モードを利用するためのアタッチメントです。
+<ul>
+	<li>HUYE氏の「USBコントローラ→ATARI変換機」純正基板</li>
+	<li>拙作「USB joypad to X680x0」基板</li>
+</ul>
+のいずれかと組み合わせて使います。<br>
+本件はHUYE氏が開発しているものです。基板の作図のみ私の担当とさせていただいております。</p>
+
+<h2>追加される機能</h2>
+HUYE氏の解説ページの変換モード一覧に記載の "JAMMA_" で始まる各モードを追加します。<br>
+使用する場合は、ATARI-P1(PORT1)のケーブルを外し、ATARI-P3へつなぎかえてください。<br>
+また、ATARI-P3を使う場合はATARI-P2(PORT2)のケーブルを外しておいてください。ゲームが誤動作する事があります。<br>
+後述する安全上の理由で、ケーブルをつなぎかえる際には都度電源を切る必要があります。
+
+<h2>接続するその前に《重要な注意事項》</h2>
+ケーブルの着脱はX680x0を含む全ての機器の電源を切った状態で行ってください。<br>
+この頒布品以外での話ですが、通電中にケーブルを着脱したため、X680x0が故障したという事例を聞いております。<br>
+昨今のPCが便利になりすぎて皆忘れているかもしれませんが、X680x0には通電中に着脱されることを意図した構造のコネクタは存在しません。
+
+<h2>基板の連結順</h2>
+本基板はUSB Host Shieldの上に連結します。<br>
+つまり、上から順に
+<ul>
+	<li>「USBコントローラ→ATARI変換機」または「USB joypad to X680x0」の基板</li>
+	<li>このアタッチメント基板</li>
+	<li>USB Host Shield 2.0</li>
+	<li>Arduino UNO</li>
+</ul>
+のように連結します。<br>
+なお、どの変換モードを使用する/使用しないに関係なく、アタッチメント基板は接続したままで構いません。<br>
+前述した通り、変換モード名が "JAMMA_" で始まっているモードの場合は、ATARI-P1のケーブルをATARI-P3につなぎかえる必要があります。
+
+<a name="schematic"></a>
+<h2>回路図および部品配置</h2>
+<a href="./images/schematic.png"><img width="30%" height="auto" alt="回路図" src="./images/schematic.png"></a>
+<a href="./images/parts_location_top.png"><img width="15%" height="auto" alt="天面部品配置" src="./images/parts_location_top.png"></a>
+<a href="./images/parts_location_bottom.png"><img width="15%" height="auto" alt="底面部品配置" src="./images/parts_location_bottom.png"></a>
+
+<a name="parts_list"></a>
+<h2>部品一覧</h2>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>専用基板</th>
+			<th>-</th>
+			<th><a href="https://kanigarage.booth.pm/items/4498438">BOOTHにて頒布</a>予定です。
+				<a href="./images/board.png"><img width="25%" height="auto" alt="専用基板" src="./images/board.png"></a>
+			</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>Arduino用6ピン連結コネクタ</th>
+			<th>C-04045</th>
+			<th>2個必要</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>Arduino用8ピン連結コネクタ</th>
+			<th>C-04046</th>
+			<th>2個必要</th>
+		</tr>
+		<tr>
+			<th>GPIN および GPOUT</th>
+			<th>Arduino用8ピン連結コネクタ</th>
+			<th>C-04046</th>
+			<th>拙作「USB joypad to X680x0」をお使いの場合に必要です。
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>M3ネジ穴に適合するプラ製スペーサーを適宜
+			</th>
+			<th><a href="https://akizukidenshi.com/catalog/goods/search.aspx?search=x&keyword=M3+%8E%F7%8E%89+%83X%83y%81%5B%83T%81%5B&image=%8C%9F%8D%F5">[参考ページ]</a></th>
+			<th>連結コネクタの接触を安定させるために、スペーサーでの固定を推奨します。<br>
+				絶縁性材料のネジ/ナット/スペーサーを使用してください。<br>
+				なお、上記連結コネクタを使用した場合、基板同士の隙間は11mm前後になる筈です。
+			</th>
+		</tr>
+		<tr>
+			<th>J1</th>
+			<th>ライトアングルの D-sub 9ピン(DE-9) レセプタクルで、半田付け式のボードロックを有するもの</th>
+			<th>-</th>
+			<th>基板の裏側に実装してください。<br>
+				基板の表側に実装した場合、動作しないだけでなく、X680x0を含めた各機材の故障の原因になります。<br>
+				【部品の例】<br>
+				LinkMan  3223DB9RS1S2 や 3223DB9RS1G1E<br>
+				RS-PRO  239-5855<br>
+				TE  5747844-4<br>
+				ボードロックの無いレセプタクルを実装する場合、絶縁性材料のM3ボルトやナットで補強してください
+			</th>
+		</tr>
+		<tr>
+			<th>U1 および U2</th>
+			<th>東芝製 TC74HC157AP</th>
+			<th>-</th>
+			<th>他の部品を使う場合、遅延時間が十分短いことをデータシートで必ず確認してください。</th>
+		</tr>
+		<tr>
+			<th>R1</th>
+			<th>10kΩの1/6Wまたは1/4W抵抗</th>
+			<th>R-25103</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>C1 および C2</th>
+			<th>耐圧16V以上で 0.1uF のセラミックまたは積層セラミックコンデンサ</th>
+			<th>P-04064</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>粘着式の絶縁テープ</th>
+			<th>-</th>
+			<th>U2の端子近傍にUSB Host Shield (UHS2)のUSBコネクタが存在するため、短絡事故を抑止するために必要です。<br>
+				絶縁テープを貼る位置は基板裏面に印刷してあります。
+			</th>
+		</tr>
+	</tbody>
+</table>
+JP1 および JP2 は半田を盛らずにそのままにしておいてください。
+
+<h2>故障かな? と思ったら</h2>
+<h3>動作が不安定になる場合</h3>
+連結コネクタ部で接触不良を起こす事例が報告されています。
+<ul>
+	<li>Arduinoが部分的にしか動作していないように見える
+	<li>UHS2から向こう側が認識されない
+</ul>
+など、特定の現象に限りません。<br>
+他の基板を含めた作者の経験では、
+<ul>
+	<li>Arduinoに上カバーを付けている場合
+	<li>基板間のスペーサーを取り付けていない場合
+	<li>基板間のスペーサーの長さが不適切な場合
+</ul>
+に誤動作の頻度が上がるように思います。
+
+<h3>特定のボタン/レバー方向だけ操作を受け付けない、または入力され続ける</h3>
+上記の接触不良を確認しても現象が変わらない場合、
+<ul>
+	<li>U1やU2回りの半田付け不良
+	<li>U1やU2自体の故障
+</ul>
+が疑われます。
+</body>
+</html>
