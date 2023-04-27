@@ -1,0 +1,241 @@
+<html>
+<head>
+<title>「白窓君」クローン基板およびケース</title>
+</head>
+<body>
+<h1>「白窓君」クローン基板およびケース</h1>
+<p><img width="50%" height="auto" alt="組立例" src="./images/Shiromado-kun-CF.jpg"</p>
+
+<p>たんぼ氏(<a href="https://twitter.com/h_koma2">@h_koma2</a>)が開発された「白窓君」のクローンに関する情報をまとめています。<br>
+<a href="../USB2ATARI/USB2ATARI.html">USB joypad to X680x0</a>へつないでおくための白窓君が品切れしていたため、自分用に製作したものになります。<br>
+白窓君の代替として使えることを目指してはいますが、元々が自分専用であるため、万人向けとなるよう考慮されたものではないことに注意してください。
+</p>
+	
+<p>原作についての情報は<a href="http://tnb216.html.xdomain.jp/">TNB製作所</a>のページをご確認ください。<br>
+また、<a href="https://tnb216.booth.pm/items/2700441">BOOTH</a>にて、たんぼ氏の手による純正品を購入することができます。
+</p>
+
+<a name="schematic"></a>
+<h2>回路図および部品配置</h2>
+<a href="./images/schematic.png"><img width="30%" height="auto" alt="回路図" src="./images/schematic.png"></a>
+<a href="./images/parts_location_top.png"><img width="15%" height="auto" alt="天面部品配置" src="./images/parts_location_top.png"></a>
+
+<h2>純正品との差異</h2>
+本作はRev.D回路図を参考にしていますが、以下が異なります。
+<ul>
+	<li>液晶モジュールが異なる<br>
+		純正品ではSunlike Display Tech.社のSC1602を使用していますが、本作では同社製のSD1602を使用しています。<br>
+		このため、実物で確認した限りでは、視野角が若干狭くなっています。<br>
+		また、画素の横幅が若干狭いため、文字のバランスが異なって表示されます。
+	<li>受信バッファと液晶モジュール間の外付けプルアップ抵抗を省略している<br>
+		SD1602に搭載されたICがデータシート通りにST7706UまたはHD44780であるならば、E端子以外の入力は内部でプルアップされています。
+	<li>液晶モジュールのE端子をプルダウンしている<br>
+		他の入力端子がフローティング状態、かつ、E端子がHレベルと認識された場合に誤動作の原因となるため、E端子をプルダウンしています。<br>
+		ただし、下記理由により、実際にはプルダウン抵抗は不要です。
+</ul>
+通常、回路図中のR2～R9には部品をとりつけません。<br>
+X680x0 または USB joypad to X680x0 に直結する場合、これらの端子がフローティング状態になる事は無いためです。
+
+<a name="parts_list"></a>
+<h2>部品一覧</h2>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>専用基板</th>
+			<th>-</th>
+			<th>頒布の可否について確認中です。
+				<a href="./images/board.jpg"><img width="25%" height="auto" alt="専用基板" src="./images/board.jpg"></a>
+			</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>M1.7かM1.6のネジやスペーサー類</th>
+			<th>-</th>
+			<th>(参考)下記部品で組む場合、基板間の隙間は11.0mm ±0.15mmになります。</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>接続ケーブル</th>
+			<th>C-00004</th>
+			<th>片側がDE-9レセプタクル、他端がDE-9プラグのストレート結線のケーブルが必要です。<br>
+				EIA-574(9ピンタイプのRS-232)のストレート延長ケーブルや、メガドライブのパッド用延長ケーブルを利用できます。
+			</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>Sunlike Display Tech.製 SD1602</th>
+			<th>P-02985, P-01675, P-01797 のいずれか</th>
+			<th>ピン配置や形状が紛らわしい物が多いので、左記の指定品以外を使う場合には念入りに確認してください。</th>
+		</tr>
+		<tr>
+			<th>U1</th>
+			<th>東芝製 TC74HCT244AP</th>
+			<th>-</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>C1</th>
+			<th>0.1uFで耐圧16V以上の積層セラミックコンデンサ</th>
+			<th>P-04064</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>C2</th>
+			<th>47uF～100uFで耐圧16V以上の積層セラミックコンデンサまたは電解コンデンサ</th>
+			<th>P-10270</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>F1</th>
+			<th>MF-R010</th>
+			<th>P-12911</th>
+			<th>(参考)R2～R9が実装されていない状態での消費電流は16mA程でした。</th>
+		</tr>
+		<tr>
+			<th>J1</th>
+			<th>半田付け式ボードロックを有する、ライトアングル(水平取付)DE-9レセプタクル</th>
+			<th>-</th>
+			<th>【部品の例】<br>
+				LinkMan  3223DB9RS1S2 や 3223DB9RS1G1E<br>
+				RS-PRO  239-5855<br>
+				TE  5747844-4
+			</th>
+		</tr>
+		<tr>
+			<th>J2</th>
+			<th>FHU-1x42SG</th>
+			<th>C-05779</th>
+			<th>必要なピン数に切って使います。</th>
+		</tr>
+		<tr>
+			<th>VR1</th>
+			<th>TSR-065-203-R</th>
+			<th>P-06064</th>
+			<th>20kΩ Bカーブ</th>
+		</tr>
+	</tbody>
+</table>
+
+<h3>秋月電子でSD1602を購入した場合には付属している筈なので購入が不要な部品</h3>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>PH-1x40SG</th>
+			<th>P-00167</th>
+			<th>上記J2のオス側</th>
+		</tr>
+		<tr>
+			<th>R1</th>
+			<th></th>
+			<th>-</th>
+			<th>LEDバックライトの電流制限抵抗です<br>
+				SD1602付属のデータシートを確認して、値を選定してください。
+			</th>
+		</tr>
+	</tbody>
+</table>
+
+<h3>X680x0側でプルアップされているので実装の必要が無い部品</h3>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>R2～R8</th>
+			<th>10k～47kΩくらいの1/4Wカーボン抵抗</th>
+			<th>R-25223</th>
+			<th>集合抵抗モジュールでも可</th>
+		</tr>
+	</tbody>
+</table>
+
+<h3>SD1602のE信号がフローティング状態になりうる場合のみ実装する部品</h3>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>R9</th>
+			<th>47k～470kΩくらいの1/4Wカーボン抵抗</th>
+			<th>R-25474</th>
+			<th>フローティング状態を防げれば良いので、極端に小さい値でなければ目的を達せられます。</th>
+		</tr>
+	</tbody>
+</table>
+
+<a name="enclosure"></a>
+<h2>専用ケースについての注意事項</h2>
+<a href="./images/enclosure.jpg"><img width="30%" height="auto" alt="専用試作ケース" src="./images/enclosure.jpg"></a>
+<a href="./images/assembly1.jpg"><img width="auto" height="20%" alt="組立て例1" src="./images/assembly1.jpg"></a>
+<a href="./images/assembly2.jpg"><img width="10%" height="auto" alt="組立て例2" src="./images/assembly2.jpg"></a>
+<a href="./images/latch.png"><img width="20%" height="auto" alt="分解用ラッチ" src="./images/latch.png"></a>
+
+<p>3Dプリンタ出力品ですので、いわゆるガンプラのような精度を有していません。
+<ul>
+	<li>気泡埋めや傷取りなどの表面処理
+	<li>仮組みによる確認
+	<li>すり合わせの調整
+	<li>お湯を使った部品の歪みの修正
+</ul>
+といった「ガレージキットの基本的な作法」を暗黙の内に要求します。
+</p>
+<p>
+また、ケースに組み込んだ後でのコントラスト調整はできないため、
+必ずケースに組み込む前に動作確認や調整を済ませる必要があります。<br>
+どうしても分解が必要な場合に備えて、ケース左側面に隙間を用意してあります。<br>
+この隙間とDE-9コネクタ上面の段差を利用して開けてください。
+</p>
+<p>
+液晶基板の固定ネジは少し緩めに止めてください(締まり始める位置から1/8～1/4回転程度戻す感じ)。<br>
+J2の取り付け誤差をこの緩みで吸収する意図です。
+</p>
+
+<h2>ケースを自作するための寸法情報</h2>
+<a href="./images/board_dimensions.png"><img width="30%" height="auto" alt="基板寸法図" src="./images/board_dimensions.png"></a>
+
+<p>Vカット線以外の基板外形線は全て0.5mmグリッド上に乗るように設計してあります。<br>
+以下、明示しない限り、
+<ul>
+	<li>DE-9レセプタクル(J1)を右向きにした状態
+	<li>基板左上隅が原点
+	<li>X軸は右向きが正
+	<li>Y軸は下向きが正
+</ul>
+とします。
+<ul>
+	<li>基板サイズ 90.0mm × 32.0mm × 1.6mm<br>
+		Vカットの切り代が0.5～1.0mmあるため、幅(Y軸方向)は設計値よりも0.5～2.0mm大きくなる
+	<li>基板四隅の面取り半径 3.0mm
+	<li>DE-9レセプタクル側を 2.0mm × 16.0mm 切り欠いてある<br>
+		この箇所の面取り半径は 1.0mmなので最狭部は 14.0mmとなる
+	<li>SD1602の画面窓は<br>
+		(9.0, 8.5) (61.0, 8.5) (61.0, 24.5) (9.0, 24.5)の内側16.0mm × 52.0mmの矩形となる
+	<li>SD1602の取り付けボスの位置は<br>
+		(4.0, 5.0) (66.0, 5.0) (66.0, 27.0) の3箇所<br>
+		穴サイズは1.8mmφ
+</ul>
+</p>
+</body>
+</html>
