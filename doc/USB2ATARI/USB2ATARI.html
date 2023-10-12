@@ -3,7 +3,7 @@
 <title>USB joypad to X680x0</title>
 </head>
 <body>
-<h1>USB joypad to X68000</h1>
+<h1>USB joypad to X680x0</h1>
 <p><img width="50%" height="auto" alt="接続例" src="./images/usb2atari.jpg"</p>
 
 <p>HUYE氏が中心になって開発している
@@ -35,8 +35,7 @@ HUYE氏の所有していないUSBコントローラである場合は、実機�
 </ul>
 は使用をご遠慮ください。</p>
 
-<p>基板の面積の狭さ故に表面実装部品を使用しています。<br>
-連結コネクタの数が増えているのも相まって、控えめに言っても初心者向けではありません。<br>
+<p>実装密度や連結コネクタの数が増えているのも相まって、控えめに言っても初心者向けではありません。<br>
 <a href="./images/connection1.png"><img width="25%" height="auto" alt="連結部分" src="./images/connection1.png"></a>
 <a href="./images/connection2.png"><img width="25%" height="auto" alt="連結部分" src="./images/connection2.png"></a>
 
@@ -70,7 +69,7 @@ HUYE氏の所有していないUSBコントローラである場合は、実機�
 <ul>
 	<li>1店舗で部品が揃わない
 	<li>全ての外部接続はコネクタ経由
-	<li>数個ほど面実装部品がある
+	<li>(20221114版の場合)数個ほど面実装部品がある
 </ul>
 というわけで、前述の追加機能/組み立ての難易度/追加部品の価格を比較検討して選んでいただくことになります。
 
@@ -99,17 +98,20 @@ SW1がPORT1、SW2がPORT2の設定スイッチです。<br>
 白窓君には現在の変換モードが表示されます。<br>
 LED の点滅パターンを見ても変換モードを思い出せない時や、変換機本体を見えない場所に設置する場合などに便利でしょう。
 
-<a name="schematic"></a>
-<h2>回路図および部品配置</h2>
-<a href="./images/schematic.png"><img width="30%" height="auto" alt="回路図" src="./images/schematic.png"></a>
-<a href="./images/parts_location_top.png"><img width="15%" height="auto" alt="天面部品配置" src="./images/parts_location_top.png"></a>
-<a href="./images/parts_location_bottom.png"><img width="15%" height="auto" alt="底面部品配置" src="./images/parts_location_bottom.png"></a>
-
+<!-- ------------------------------------------------------------------------------  -->
+<hr>
+<a name="schematic_smt"></a>
+<h2>回路図および部品配置(20221114版)</h2>
+<a href="./images/schematic_smt.png"><img width="30%" height="auto" alt="回路図" src="./images/schematic_smt.png"></a>
+<a href="./images/parts_location_smt_top.png"><img width="15%" height="auto" alt="天面部品配置" src="./images/parts_location_smt_top.png"></a>
+<a href="./images/parts_location_smt_bottom.png"><img width="15%" height="auto" alt="底面部品配置" src="./images/parts_location_smt_bottom.png"></a>
 
 
 <a name="parts_list"></a>
-<h2>部品一覧</h2>
-この改変版は利用したい機能に応じて、調達する部材が増えていくという構成になっています。
+<a name="parts_list_smt"</a>
+<h2>部品一覧(20221114版)</h2>
+利用したい機能に応じて、調達する部材が増えていくという構成になっています。<br>
+20230311版の基板を入手された方は<a href="#schematic_tht">こちら</a>を参照してください。
 
 <h3>HUYE氏オリジナルの変換機能のみを利用する場合</h3>
 <table cellspacing="3" bordercolor="#484848" border="1">
@@ -125,7 +127,7 @@ LED の点滅パターンを見ても変換モードを思い出せない時や�
 			<th>専用基板</th>
 			<th>-</th>
 			<th><a href="https://kanigarage.booth.pm/items/4343919">BOOTHにて頒布</a>していました。
-				<a href="./images/board.jpg"><img width="25%" height="auto" alt="専用基板" src="./images/board.jpg"></a>
+				<a href="./images/board_smt.jpg"><img width="25%" height="auto" alt="専用基板" src="./images/board_smt.jpg"></a>
 			</th>
 		</tr>
 		<tr>
@@ -276,7 +278,7 @@ LED の点滅パターンを見ても変換モードを思い出せない時や�
 		</tr>
 		<tr>
 			<th>C2</th>
-			<th>耐圧16V以上で100～470uFの電解コンデンサ</th>
+			<th>耐圧16V以上で47～100uFの電解コンデンサ</th>
 			<th>-</th>
 			<th>通常は必要ありません。<br>
 				白窓君の表示や輝度が不安定な場合に実装してください。</th>
@@ -334,7 +336,243 @@ LED の点滅パターンを見ても変換モードを思い出せない時や�
 		</tr>
 	</tbody>
 </table>
+<p>
+<!-- ------------------------------------------------------------------------------  -->
+<hr>
+<a name="schematic_tht"></a>
+<h2>回路図および部品配置(20230311版)</h2>
+<a href="./images/schematic_tht.png"><img width="30%" height="auto" alt="回路図" src="./images/schematic_tht.png"></a>
+<a href="./images/parts_location_tht_top.png"><img width="15%" height="auto" alt="天面部品配置" src="./images/parts_location_tht_top.png"></a>
+<a href="./images/parts_location_tht_bottom.png"><img width="15%" height="auto" alt="底面部品配置" src="./images/parts_location_tht_bottom.png"></a>
 
+<a name="parts_list_tht"</a>
+<h2>部品一覧(20230311版)</h2>
+利用したい機能に応じて、調達する部材が増えていくという構成になっています。<br>
+20221114版の基板を入手された方は<a href="#schematic_smt">こちら</a>を参照してください。
+
+<h3>HUYE氏オリジナルの変換機能のみを利用する場合</h3>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>専用基板</th>
+			<th>-</th>
+			<th><a href="https://kanigarage.booth.pm/items/4343919">BOOTHにて頒布</a>していました。
+				<a href="./images/board_tht.jpg"><img width="25%" height="auto" alt="専用基板" src="./images/board_tht.jpg"></a>
+			</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>Arduino UNO</th>
+			<th>M-07385 または M-15574</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>USB host shield 2.0 for Arduino UNO<br>(以下UHS2と略)</th>
+			<th>-</th>
+			<th>原作者のページは<a href="https://github.com/felis/USB_Host_Shield_2.0">こちら</a><br>
+				2.0以外、例えば1.2やminiを選んでしまうと大改造が必要なので注意。
+			</th>
+		</tr>
+		<tr>
+			<th>J1</th>
+			<th>2階建ての D-sub 9ピン(DE-9)レセプタクル</th>
+			<th>C-02870</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>Arduino用6ピン連結コネクタ</th>
+			<th>C-04045</th>
+			<th>2個必要</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>Arduino用8ピン連結コネクタ</th>
+			<th>C-04046</th>
+			<th>2個必要</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>M3ネジ穴に適合する11.2mm前後のプラ製スペーサー</th>
+			<th>-</th>
+			<th>UHS2のUSBコネクタとの短絡を防ぐための支え棒として2組以上を使用します。<br>
+				導電性のネジ/ナットを使ってはいけません。
+			</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>粘着式の絶縁シートまたは絶縁テープ</th>
+			<th>-</th>
+			<th>上記J1の端子部分がUHS2のUSBコネクタ近傍に露出しており、短絡事故を防ぐために必要です。<br>
+				覆う範囲は基板裏面に印刷してあります。</th>
+		</tr>
+	</tbody>
+</table>
+
+<h3>変換モード表示LEDを増設する場合</h3>
+変換モード表示LEDは全く同じ機能のものがArduino UNO上に載っています。<br>
+ただし、基板やコネクタの隙間から覗き込まないと見えません。
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>LED1</th>
+			<th>お好みのLED</th>
+			<th>I-01318</th>
+			<th>大電流のものを選ぶとUHS2の動作に影響が出るので、安価な標準的な物を選んでください。</th>
+		</tr>
+		<tr>
+			<th>R1</th>
+			<th>上記LEDに合わせた1/4Wの抵抗</th>
+			<th>R-25681</th>
+			<th>赤色LEDであれば680Ω付近が妥当かと思いますが、正しい値はLEDのデータシートから算出してください。<br>
+				屋内で使うものですから、定格目一杯でギンギンに光らせるものでもないでしょう。
+			</th>
+		</tr>
+	</tbody>
+</table>
+輝度やLED自体を変更する場合、一般的には電流制限抵抗R1の値も変更する必要があります。<br>
+電源電圧を5.0Vとして、<a href="https://akizukidenshi.com/catalog/contents1/led-r-calc.aspx">秋月電子の計算用ページ</a>
+などを利用して抵抗値を求めると良いでしょう。  
+
+<h3>モード設定スイッチを使う場合</h3>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>GPIN</th>
+			<th>Arduino用8ピン連結コネクタ</th>
+			<th>C-04046</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>UHS2側のGPINソケット</th>
+			<th>C-05779</th>
+			<th>8ピン分だけ切って使います。<br>
+				UHS2にソケットを実装していない場合に必要です。
+		</tr>
+		<tr>
+			<th>SW1およびSW2</th>
+			<th>ECE製 ERD216RSZ</th>
+			<th>P-02276</th>
+			<th>正論理(リアルコード)のロータリーDIPスイッチです。16ポジションのものを使用してください。<br>
+				指定品が入手困難な場合は、NKKスイッチズの FR01-KR16P / FR01-KR16H のいずれかで代用できます。<br>
+				どのスイッチを使う場合にも、実装方向と半田付け時のスイッチ位置に注意してください。
+				<a href="./images/dipsw_pinouts.png"><img width="25%" height="auto" alt="ロータリーDIPSWの実装方向" src="./images/dipsw_pinouts.png"></a>
+			</tr>
+	</tbody>
+</table>
+
+<h3>状態表示LCDを使う場合</h3>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>秋月電子の通販コード</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>GPOUT</th>
+			<th>Arduino用8ピン連結コネクタ</th>
+			<th>C-04046</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>UHS2側のGPOUTソケット</th>
+			<th>C-05779</th>
+			<th>8ピン分だけ切って使います。<br>
+				UHS2にソケットを実装していない場合に必要です。</th>
+		</tr>
+		<tr>
+			<th>C1</th>
+			<th>耐圧16V以上で 0.1uF のセラミックコンデンサ</th>
+			<th>P-04064</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>C2</th>
+			<th>耐圧16V以上で47～100uFの電解コンデンサ</th>
+			<th>-</th>
+			<th>通常は必要ありません。<br>
+				白窓君の表示や輝度が不安定な場合に実装してください。</th>
+		</tr>
+		<tr>
+			<th>F1</th>
+			<th>リセッタブルヒューズ</th>
+			<th>P-12631</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>J2</th>
+			<th>スルーホール垂直取り付けタイプのD-sub 9ピン(DE-9)プラグ</th>
+			<th>-</th>
+			<th>アンフェノール LD09P24A4GV00LFなど。<br>
+				半田付けタイプのボードロックが必須です。<br>
+				ソルダカップ端子のコネクタは使用できないので注意してください。<br>
+				なお、ジョイパッドのケーブルで使われる事が多い総プラスチック製のコネクタですが、
+				D-sub 9ピンと称しつつ形状が微妙に違うため、そのまま挿すと角が削れてしまう問題があります。
+				予防するためには受け側(J2側)の金属枠をラジオペンチ等で矯正してください。</th>
+		</tr>
+		<tr>
+			<th>U1</th>
+			<th>東芝製 TC74HCT541AP</th>
+			<th>-</th>
+			<th>3.3V系から5.0V系へのレベル変換に使用しています。<br>
+				他の部品を使う場合、以下の要件を満たす必要があります:
+				<ul>
+					<li>入力電圧の閾値が目的を満たすこと
+					<li>出力側がトーテムポール(プッシュプル)出力であること
+				</ul>
+			</th>
+		</tr>
+		<tr>
+			<th>-</th>
+			<th>白窓君</th>
+			<th>-</th>
+			<th><a href="https://tnb216.booth.pm/items/2700441">TNB製作所さんから購入</a>してください。</th>
+		</tr>
+	</tbody>
+</table>
+
+<h3>パターンだけ存在するが実装しない部品</h3>
+<table cellspacing="3" bordercolor="#484848" border="1">
+	<tbody>
+		<tr>
+			<th>部品配置</th>
+			<th>部品名</th>
+			<th>解説</th>
+		</tr>
+		<tr>
+			<th>SW3</th>
+			<th>リセットスイッチ</th>
+			<th>同じ機能のスイッチがArduino UNOとUHS2のそれぞれに実装されています。</th>
+		</tr>
+	</tbody>
+</table>
+<p>
+<!-- ------------------------------------------------------------------------------  -->
+<hr>
 <h2>故障かな? と思ったら</h2>
 <h3>動作が不安定になる場合</h3>
 連結コネクタ部で接触不良を起こす事例が報告されています。
