@@ -108,7 +108,7 @@ LED の点滅パターンを見ても変換モードを思い出せない時や�
 
 
 <a name="parts_list"></a>
-<a name="parts_list_smt"</a>
+<a name="parts_list_smt"></a>
 <h2>部品一覧(20221114版)</h2>
 利用したい機能に応じて、調達する部材が増えていくという構成になっています。<br>
 20230311版の基板を入手された方は<a href="#schematic_tht">こちら</a>を参照してください。
@@ -345,7 +345,7 @@ LED の点滅パターンを見ても変換モードを思い出せない時や�
 <a href="./images/parts_location_tht_top.png"><img width="15%" height="auto" alt="天面部品配置" src="./images/parts_location_tht_top.png"></a>
 <a href="./images/parts_location_tht_bottom.png"><img width="15%" height="auto" alt="底面部品配置" src="./images/parts_location_tht_bottom.png"></a>
 
-<a name="parts_list_tht"</a>
+<a name="parts_list_tht"></a>
 <h2>部品一覧(20230311版)</h2>
 利用したい機能に応じて、調達する部材が増えていくという構成になっています。<br>
 20221114版の基板を入手された方は<a href="#schematic_smt">こちら</a>を参照してください。
@@ -363,7 +363,7 @@ LED の点滅パターンを見ても変換モードを思い出せない時や�
 			<th>-</th>
 			<th>専用基板</th>
 			<th>-</th>
-			<th><a href="https://kanigarage.booth.pm/items/4343919">BOOTHにて頒布</a>していました。
+			<th><a href="https://kanigarage.booth.pm/items/5245299">BOOTHにて頒布</a>予定です。
 				<a href="./images/board_tht.jpg"><img width="25%" height="auto" alt="専用基板" src="./images/board_tht.jpg"></a>
 			</th>
 		</tr>
@@ -574,11 +574,16 @@ LED の点滅パターンを見ても変換モードを思い出せない時や�
 <!-- ------------------------------------------------------------------------------  -->
 <hr>
 <h2>故障かな? と思ったら</h2>
+<h3>SW1またはSW2で変換モードを切り替えられない</h3>
+ファームウェア4.20以降をインストールした場合、初期状態ではSW1およびSW2はロックされています。<br>
+ジョイパッドのSELECT+START同時押し3秒でSW1やSW2での操作の有効/無効が切り替わります。<br>
+より詳しくはHUYE氏のページに掲載された変換モード切替方法一覧を参照ください。
+
 <h3>動作が不安定になる場合</h3>
 連結コネクタ部で接触不良を起こす事例が報告されています。
 <ul>
-	<li>Arduinoが部分的にしか動作しない
-	<li>UHS2から向こう側が認識されない
+	<li>特定の方向/ボタンが動作しない
+	<li>USBコントローラが認識されなくなる
 </ul>
 など、特定の現象に限りません。<br>
 他の基板を含めた作者の経験では、
